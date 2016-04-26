@@ -17,8 +17,8 @@
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
-# Get the long list of APNs
-PRODUCT_COPY_FILES := vendor/krexus/prebuilt/common/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+# Inherit 64-bit configs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
